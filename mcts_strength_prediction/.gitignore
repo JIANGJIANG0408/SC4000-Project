@@ -1,0 +1,33 @@
+# Created by Gemini
+
+# Environments
+.venv/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter
+.ipynb_checkpoints
+
+# Data
+# Ignore all csv files in data folder, but do not ignore concepts.csv
+mcts_strength_prediction/data/*.csv
+!mcts_strength_prediction/data/concepts.csv
+
+# Outputs
+mcts_strength_prediction/outputs/
+
+# Exclude datasets (all CSV/Parquet etc.)
+data/
+data/**/*.csv
+data/**/*.parquet
+
+# Exclude generated plots/outputs
+outputs/
+
+# Large local artifacts
+*.zip
