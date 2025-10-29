@@ -3,10 +3,70 @@
 
 这个仓库是我们团队的项目代码库。
 
-## 🚀 项目启动与环境设置 (Setup)
+## 快速开始
 
-1.  克隆本仓库到你的本地。
-2.  安装所需的Python包: `pip install -r requirements.txt`
+- 系统要求：Python 3.11（建议）或兼容版本
+- 推荐使用虚拟环境隔离依赖
+
+1) 克隆并进入项目目录
+```bash
+git clone <你的仓库地址>
+cd SC4000-Project
+```
+
+2) 创建并激活虚拟环境
+```bash
+python3 -m venv .venv && source .venv/bin/activate
+```
+
+3) 安装依赖
+```bash
+pip install -r mcts_strength_prediction/requirements.txt
+```
+
+4) 启动 Jupyter（如需运行 Notebook）
+```bash
+python -m jupyter notebook
+```
+
+可选：将当前虚拟环境注册为 Jupyter 内核，方便在 Notebook 中选择
+```bash
+python -m ipykernel install --user --name sc4000-venv --display-name ".venv"
+```
+
+---
+
+
+## 依赖与环境
+
+以下依赖已在 `mcts_strength_prediction/requirements.txt` 中列出：
+
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- lightgbm
+- xgboost（LightGBM 在 macOS 下异常时的替代）
+- jupyter
+- ipykernel
+
+安装依赖：
+```bash
+pip install -r mcts_strength_prediction/requirements.txt
+```
+
+macOS 下使用 LightGBM 需要安装 OpenMP：
+```bash
+brew install libomp
+```
+
+如遇 LightGBM 动态库加载错误（`libomp.dylib` not found），先安装 `libomp`，再重装 LightGBM：
+```bash
+pip uninstall -y lightgbm && pip install lightgbm
+```
+
+---
 
 ## 📊 数据集说明与获取 (Dataset)
 
